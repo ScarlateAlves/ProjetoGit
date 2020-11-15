@@ -1,0 +1,43 @@
+.botao {
+    font-size: 20px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    width: 490px;
+    justify-content: space-around;
+}
+
+.botao input {
+    height: 110%;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 4px;
+    width: 300px;
+}
+
+.corpo {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#foto {
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 500px;
+}
+
+img {
+    border-radius: 500px;
+    width: 95%;
+    height: 95%;
+}
+
+p {
+    font-size: 20px;
+}

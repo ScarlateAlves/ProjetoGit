@@ -1,0 +1,11 @@
+Propriedade de: @ScarlateAlves
+
+ID do aplicativo: 88659
+
+ID do cliente: Iv1.88031344e729edff
+
+chave :  SHA256:8dT9nPk4ovAX9MrGJ+QQXi28xUhaY46Cs9akQ8/m6go=
+api.github.com/users
+
+
+https://api.github.com/users
