@@ -16,17 +16,19 @@ class ModelGit {
         let chave = "SHA256:VOjPq+xIAj+aY99lJncgqrmfVm/nArbIpCSobi3S+Ls="
 
         let request = new XMLHttpRequest();
-        request.addEventListener('load', () => {
-            if (request.status == 200) {
-                let guardaDados = this.processaDados(request.responseText)
-                this.atualizaDados(guardaDados)
-            }
+        try {
+            request.addEventListener('load', () => {
+                if (request.status == 200) {
+                    let guardaDados = this.processaDados(request.responseText)
+                    this.atualizaDados(guardaDados)
+                }
+            })
+            request.open('GET', `${url}/${usuario}?client_id=${idCliente}&client_secret=${chave}`, false)
+            request.send();
+        } catch (error) {
+            throw ("erro", error)
+        }
 
-        })
-        request.open('GET', `${url}/${usuario}?client_id=${idCliente}&client_secret=${chave}`, false)
-
-
-        request.send();
     }
 
     processaDados(x) {
@@ -36,14 +38,19 @@ class ModelGit {
     }
 
     atualizaDados(request) {
-        this.nome = request.name
-        this.imagem = request.avatar_url
-        this.quantRepositorio = request.followers
-        this.url = request.url
-        this.followers_url = request.followers_url
-        this.following_url = request.following_url
-        this.gists_url = request.gists_url
-        this.repos_url = request.repos_url
+
+        try {
+            this.nome = request.name
+            this.imagem = request.avatar_url
+            this.quantRepositorio = request.followers
+            this.url = request.url
+            this.followers_url = request.followers_url
+            this.following_url = request.following_url
+            this.gists_url = request.gists_url
+            this.repos_url = request.repos_url
+        } catch (error) {
+            throw ("erro")
+        }
 
     }
 
